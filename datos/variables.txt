@@ -1,0 +1,16 @@
+01 date: Fecha en MM-DD-AAAA
+02 day: Día de la semana
+03 quarter: Una porción del mes. Un mes se dividió entre 4 y 5 partes.
+04 department: Departamento asociado a la instancia
+05 team_no: número de equipo asociado con la instancia
+06 no_of_workers: Número de trabajadores en cada equipo
+07 no_of_style_change: Número de cambios en el estilo de un producto en particular
+08 target_productivity: Productividad objetivo establecida para cada equipo para cada día.
+09 smv: Valor de minutos estándar, es el tiempo asignado para una tarea
+10 wip: Trabajo en progreso. Incluye la cantidad de elementos sin terminar.
+11 over_time: Representa la cantidad de tiempo extra de cada equipo en minutos.
+12 incentive: Representa la cantidad de incentivo financiero (en unidades monetarias).
+13 idle_time: La cantidad de tiempo durante el cual la producción estuvo interrumpida.
+14 idle_men: El número de trabajadores que estaban inactivos debido a la interrupción de la producción.
+15 actual_productivity: El % real de productividad que entregaron los trabajadores. Varía de 0 a 1.
+
