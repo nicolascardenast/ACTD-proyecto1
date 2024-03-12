@@ -11,12 +11,14 @@ import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 import random
 
-APP_HOME="C:/Users/arcem/OneDrive/Documentos/Universidad!/Analítica Computacional/Proyecto analítica/tablero_de_productividad/tablero_de_productividad"
-APP_HOME
+#APP_HOME="C:/Users/arcem/OneDrive/Documentos/Universidad!/Analítica Computacional/Proyecto analítica/tablero_de_productividad/tablero_de_productividad"
+#APP_HOME
 
-import pandas as pd
+directorio_padre = os.path.dirname(os.getcwd())
 
-productivity_data = pd.read_csv('datos_limpios.csv')
+ruta = directorio_padre + '/ACTD-proyecto1/datos/datos_limpios.csv'
+
+productivity_data = pd.read_csv(ruta)
 productivity_data['team']=[ "team "+ str(_) for _ in productivity_data['team']] 
 grouped_summary = productivity_data.groupby('team')['actual_productivity'].median().reset_index()
 grouped_summary = grouped_summary.sort_values('actual_productivity')
