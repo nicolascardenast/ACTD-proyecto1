@@ -1,0 +1,3 @@
+parameters,coef,std err,t,P>|t|,[0.025,0.975]
+incentive,8.672e-05,3.14e-05,2.761,0.006,2.51e-05,0.000
+no_of_workers_redondeado,-0.0005,0.000,-2.173,0.030,-0.001,-4.79e-05
