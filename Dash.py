@@ -19,6 +19,7 @@ directorio_padre = os.path.dirname(os.getcwd())
 ruta = directorio_padre + '/ACTD-proyecto1/datos/datos_limpios.csv'
 
 productivity_data = pd.read_csv(ruta)
+
 productivity_data['team']=[ "team "+ str(_) for _ in productivity_data['team']] 
 grouped_summary = productivity_data.groupby('team')['actual_productivity'].median().reset_index()
 grouped_summary = grouped_summary.sort_values('actual_productivity')
@@ -95,12 +96,6 @@ def compute_predicted_productivity(index, custom_values=None):
             if col not in summarized_data.columns:
                 raise ValueError(f"Column '{col}' is not a valid column.")
             summarized_data[col] = value
-
-    with open('scaler.pkl', 'rb') as file:
-        scaler = pickle.load(file)
-    summarized_data_scaled = scaler.transform(summarized_data)
-
-    predicted_productivity = model.predict(summarized_data_scaled)
 
     return predicted_productivity[0]  
 
