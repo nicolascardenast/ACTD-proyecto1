@@ -1,3 +1,4 @@
+
 import dash_bootstrap_components as dbc
 import os
 import re
@@ -96,6 +97,12 @@ def compute_predicted_productivity(index, custom_values=None):
             if col not in summarized_data.columns:
                 raise ValueError(f"Column '{col}' is not a valid column.")
             summarized_data[col] = value
+
+    with open('scaler.pkl', 'rb') as file:
+        scaler = pickle.load(file)
+    summarized_data_scaled = scaler.transform(summarized_data)
+
+    predicted_productivity = model.predict(summarized_data_scaled)
 
     return predicted_productivity[0]  
 
